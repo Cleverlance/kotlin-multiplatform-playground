@@ -34,6 +34,20 @@ func main() {
     }
 
     let user = User(firstName: "First", lastName: "Last")
+    user.doCopy(firstName: "First", lastName: "Last")
+
+    let ultraUser = UltraUser(firstName: "First", lastName: "Last")
+    ultraUser.doCopy(firstName: "First", lastName: "Last")
+    ultraUser.doCopy(firstName: "First")
+    ultraUser.doCopy(lastName: "Last")
+    ultraUser.doCopy()
+
+    let superUser = SuperUser(firstName: "First", lastName: "Last")
+    superUser.doCopy(firstName: "First", lastName: "Last")
+    superUser.doCopy(first: "First", last: "Last")
+    superUser.doCopy(first: "First")
+    superUser.doCopy(last: "Last")
+    superUser.doCopy()
 
     let animal: Animal = AnimalDinosaur.shared
     switch onEnum(of: animal) {

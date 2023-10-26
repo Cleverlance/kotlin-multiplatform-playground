@@ -1,5 +1,6 @@
 @file:OptIn(ExperimentalObjCName::class, ExperimentalObjCRefinement::class)
 
+import co.touchlab.skie.configuration.annotations.DefaultArgumentInterop
 import kotlin.experimental.ExperimentalObjCName
 import kotlin.experimental.ExperimentalObjCRefinement
 
@@ -20,7 +21,8 @@ fun throwsFunction(): Nothing {
     throw Exception()
 }
 
-fun intFunction(a: Int, b: Int?): Long {
+@DefaultArgumentInterop.Enabled
+fun intFunction(a: Int, b: Int? = null): Long {
     return 0
 }
 
@@ -42,6 +44,14 @@ object Object
 enum class City { London, Paris, NewYork }
 
 data class User(val firstName: String, val lastName: String)
+data class UltraUser(val firstName: String, val lastName: String)
+data class SuperUser(val firstName: String, val lastName: String) {
+
+    @DefaultArgumentInterop.Enabled
+    fun doCopy(first: String = firstName, last: String = lastName): SuperUser {
+        return copy(firstName = first, lastName = last)
+    }
+}
 
 sealed interface Animal {
     data class Dog(val lives: Boolean) : Animal
