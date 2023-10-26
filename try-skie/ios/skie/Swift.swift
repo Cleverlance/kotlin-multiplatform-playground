@@ -29,20 +29,20 @@ func main() {
         print ("Paris")
     case .newyork:
         print ("New York")
-    default:
-        print("There are no guarantees")
+//    default:
+//        print("There are no guarantees")
     }
 
     let user = User(firstName: "First", lastName: "Last")
 
     let animal: Animal = AnimalDinosaur.shared
-    switch animal {
-    case let dog as AnimalDog:
+    switch onEnum(of: animal) {
+    case .dog(let dog):
         print("Dog " + dog.lives.description)
-    case is AnimalDinosaur:
+    case .dinosaur:
         print("Dinosaur")
-    default:
-        print("There are no guarantees")
+//    default:
+//        print("There are no guarantees")
     }
     
     let interface: Interface = ImplementationOfInterface()
