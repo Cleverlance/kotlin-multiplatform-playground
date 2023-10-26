@@ -71,6 +71,21 @@ func main() {
     login(input: user)
         
     Task {
-        try await KotlinKt.doSomethingAsync(input: "1") // Cancellation not propagated
+        try await KotlinKt.doSomethingAsync(input: "1")
+    }
+    
+    let userFlow: SkieSwiftFlow<User> = UseCaseKt.observeUserFlow()
+    Task {
+        for await user in userFlow {
+            print(user.description())
+        }
+    }
+    
+    let observeUser = ObserveUserUseCase()
+    let observeUserFlow: SkieSwiftFlow<User> = observeUser(input: KotlinUnit())
+    Task {
+        for await user in observeUserFlow {
+            print(user.description())
+        }
     }
 }

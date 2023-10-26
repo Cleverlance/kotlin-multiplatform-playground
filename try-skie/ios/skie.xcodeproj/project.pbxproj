@@ -7,11 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9409D292AEAB44C00A50133 /* shared.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9409D202AEA561000A50133 /* shared.xcframework */; };
+		E9409D2A2AEAB44C00A50133 /* shared.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9409D202AEA561000A50133 /* shared.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E9B3FB682AE8FEBB00E02112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9B3FB672AE8FEBB00E02112 /* Assets.xcassets */; };
 		E9B3FB6B2AE8FEBB00E02112 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9B3FB6A2AE8FEBB00E02112 /* Preview Assets.xcassets */; };
 		E9EA5C092AE8FF9C00700A75 /* Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EA5C082AE8FF9C00700A75 /* Swift.swift */; };
 		E9EA5C0B2AE8FFEF00700A75 /* SkieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EA5C0A2AE8FFEF00700A75 /* SkieApp.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E9409D2B2AEAB44C00A50133 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E9409D2A2AEAB44C00A50133 /* shared.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E9409D202AEA561000A50133 /* shared.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = shared.xcframework; path = ../shared/build/XCFrameworks/debug/shared.xcframework; sourceTree = "<group>"; };
@@ -27,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9409D292AEAB44C00A50133 /* shared.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +105,7 @@
 				E9B3FB5C2AE8FEBA00E02112 /* Sources */,
 				E9B3FB5D2AE8FEBA00E02112 /* Frameworks */,
 				E9B3FB5E2AE8FEBA00E02112 /* Resources */,
+				E9409D2B2AEAB44C00A50133 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
