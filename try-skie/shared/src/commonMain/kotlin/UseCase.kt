@@ -24,3 +24,15 @@ class ObserveUserUseCase : FlowUseCase<Unit, User>() {
         return emptyFlow()
     }
 }
+
+suspend fun saveUser() {
+}
+
+expect abstract class SuspendUseCase<in I : Any, out O : Any> constructor() {
+    abstract suspend operator fun invoke(input: I): O
+}
+
+class SaveUserUseCase : SuspendUseCase<User, Unit>() {
+    override suspend fun invoke(input: User) {
+    }
+}

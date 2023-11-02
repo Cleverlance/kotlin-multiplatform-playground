@@ -88,4 +88,13 @@ func main() {
             print(user.description())
         }
     }
+    
+    Task {
+        try await UseCaseKt.saveUser()
+    }
+    
+    let saveUser = SaveUserUseCase()
+    Task {
+        try await skie(saveUser)(input:user) // skie() is a wrapper around generic class
+    }
 }
