@@ -6,6 +6,7 @@ plugins {
 }
 
 kotlin {
+    iosX64()
     iosArm64()
     iosSimulatorArm64()
 
@@ -16,12 +17,18 @@ kotlin {
                 implementation("co.touchlab.skie:configuration-annotations:0.5.5")
             }
         }
+        iosMain.configure {
+            dependencies {
+                api("io.insert-koin:koin-core:3.5.0")
+            }
+        }
     }
 
     kotlinArtifacts {
         Native.XCFramework("Multiplatform") {
-            targets(iosArm64, iosSimulatorArm64)
+            targets(iosX64, iosArm64, iosSimulatorArm64)
             binaryOption("bundleId", "try.skie.ios")
+            addModule("io.insert-koin:koin-core:3.5.0")
         }
     }
 }

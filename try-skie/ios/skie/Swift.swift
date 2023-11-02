@@ -97,4 +97,6 @@ func main() {
     Task {
         try await skie(saveUser)(input:user) // skie() is a wrapper around generic class
     }
+    
+    KoinApplication.Companion.shared
 }
