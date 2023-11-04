@@ -6,7 +6,7 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
 
 plugins {
     kotlin("multiplatform")
-    id("co.touchlab.skie") version "0.5.2"
+    id("co.touchlab.skie") version "0.5.5"
 }
 
 kotlin {
@@ -17,7 +17,7 @@ kotlin {
         commonMain.configure {
             dependencies {
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
-                implementation("co.touchlab.skie:configuration-annotations:0.5.0")
+                implementation("co.touchlab.skie:configuration-annotations:0.5.5")
             }
         }
     }
