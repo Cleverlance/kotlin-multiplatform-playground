@@ -10,8 +10,6 @@ plugins {
 }
 
 kotlin {
-    targetHierarchy.default()
-
     iosArm64()
     iosSimulatorArm64()
 

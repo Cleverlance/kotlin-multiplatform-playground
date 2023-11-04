@@ -1,3 +1,5 @@
+@file:Suppress("EXPECT_ACTUAL_CLASSIFIERS_ARE_IN_BETA_WARNING")
+
 import kotlinx.coroutines.flow.Flow
 
 actual abstract class UseCase<in I : Any, out O : Any> {
