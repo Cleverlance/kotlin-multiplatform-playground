@@ -1,8 +1,4 @@
-@file:OptIn(ExperimentalKotlinGradlePluginApi::class)
-
 import co.touchlab.skie.configuration.DefaultArgumentInterop
-import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
-import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
 
 plugins {
     kotlin("multiplatform")
@@ -22,22 +18,12 @@ kotlin {
         }
     }
 
-    XCFramework().apply {
-        listOf(iosArm64(), iosSimulatorArm64()).forEach { target ->
-            target.binaries.framework {
-                baseName = "Multiplatform"
-                add(this)
-            }
+    kotlinArtifacts {
+        Native.XCFramework("Multiplatform") {
+            targets(iosArm64, iosSimulatorArm64)
+            binaryOption("bundleId", "try.skie.ios")
         }
     }
-
-    // https://github.com/touchlab/SKIE/issues/22
-//    kotlinArtifacts {
-//        Native.XCFramework("Multiplatform") {
-//            targets(iosArm64, iosSimulatorArm64)
-//            binaryOption("bundleId", "try.skie.ios")
-//        }
-//    }
 }
 
 skie {

@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E9800BBA2AF3C55C00F8EA91 /* shared.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9409D202AEA561000A50133 /* shared.xcframework */; };
-		E9800BBB2AF3C55C00F8EA91 /* shared.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9409D202AEA561000A50133 /* shared.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E915AAD02AFAC06400C29311 /* Multiplatform.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E915AAC92AFABFA800C29311 /* Multiplatform.xcframework */; };
+		E915AAD12AFAC06400C29311 /* Multiplatform.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E915AAC92AFABFA800C29311 /* Multiplatform.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E9B3FB682AE8FEBB00E02112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9B3FB672AE8FEBB00E02112 /* Assets.xcassets */; };
 		E9B3FB6B2AE8FEBB00E02112 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9B3FB6A2AE8FEBB00E02112 /* Preview Assets.xcassets */; };
 		E9EA5C092AE8FF9C00700A75 /* Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EA5C082AE8FF9C00700A75 /* Swift.swift */; };
@@ -16,13 +16,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E9800BBC2AF3C55C00F8EA91 /* Embed Frameworks */ = {
+		E915AAD22AFAC06400C29311 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E9800BBB2AF3C55C00F8EA91 /* shared.xcframework in Embed Frameworks */,
+				E915AAD12AFAC06400C29311 /* Multiplatform.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -30,7 +30,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E9409D202AEA561000A50133 /* shared.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = shared.xcframework; path = ../shared/build/XCFrameworks/debug/shared.xcframework; sourceTree = "<group>"; };
+		E915AAC92AFABFA800C29311 /* Multiplatform.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Multiplatform.xcframework; path = ../shared/build/out/xcframework/debug/Multiplatform.xcframework; sourceTree = "<group>"; };
 		E9B3FB602AE8FEBA00E02112 /* skie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = skie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9B3FB672AE8FEBB00E02112 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9B3FB6A2AE8FEBB00E02112 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -43,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9800BBA2AF3C55C00F8EA91 /* shared.xcframework in Frameworks */,
+				E915AAD02AFAC06400C29311 /* Multiplatform.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +89,7 @@
 		E9EA5C0D2AE9013900700A75 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E9409D202AEA561000A50133 /* shared.xcframework */,
+				E915AAC92AFABFA800C29311 /* Multiplatform.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -105,7 +105,7 @@
 				E9B3FB5C2AE8FEBA00E02112 /* Sources */,
 				E9B3FB5D2AE8FEBA00E02112 /* Frameworks */,
 				E9B3FB5E2AE8FEBA00E02112 /* Resources */,
-				E9800BBC2AF3C55C00F8EA91 /* Embed Frameworks */,
+				E915AAD22AFAC06400C29311 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -179,7 +179,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd $SRCROOT/.. && ./gradlew :shared:assembleXCFramework --no-configuration-cache\n";
+			shellScript = "cd $SRCROOT/.. && ./gradlew :shared:assembleMultiplatformDebugXCFramework --no-configuration-cache\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -324,7 +324,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"skie/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../shared/build/XCFrameworks/$(CONFIGURATION)";
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../shared/build/out/xcframework/$(CONFIGURATION)";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -358,7 +358,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"skie/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../shared/build/XCFrameworks/$(CONFIGURATION)";
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../shared/build/out/xcframework/$(CONFIGURATION)";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
